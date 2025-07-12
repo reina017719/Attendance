@@ -1,0 +1,38 @@
+.header {
+    background: black;
+    width: 100%;
+}
+
+.header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.header__logo {
+    width: 90%;
+    padding-left: 30px;
+}
+
+.header__nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding-right: 30px;
+}
+
+.header__nav-item {
+    text-decoration: none;
+    color: #FFF;
+    padding-right: 35px;
+}
+
+.logout-form {
+    font-size: 16px;
+    font-weight: 200;
+    border: none;
+    background-color: #000;
+    color: #FFF;
+    cursor: pointer;
+}

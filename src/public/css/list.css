@@ -1,0 +1,166 @@
+.content {
+    background-color: #EEEEEE;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.content__inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #333;
+    border-left: 4px solid #333;
+    padding-left: 12px;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    background-color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 12px;
+}
+
+.nav-btn {
+    background: none;
+    text-decoration: none;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    color: #666;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.current-month {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.calender-icon {
+    font-size: 18px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    border-radius: 12px;
+    background-color: white;
+}
+
+th {
+    padding: 8px 12px;
+    text-align: center;
+    font-weight: bold;
+    color: #666;
+    border-bottom: 3px solid #EEEEEE;
+    font-size: 16px;
+}
+
+td {
+    padding: 10px;
+    text-align: center;
+    border-top: 1px solid #ddd;
+    font-size: 14px;
+    font-weight: bold;
+    color: #666;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+tbody tr:hover {
+    background-color: #f0f0f0;
+}
+
+td:first-child {
+    font-weight: 500;
+}
+
+td a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+td a:hover {
+    text-decoration: underline;
+}
+
+tr.empty-row td {
+    background-color: #f9f9f9;
+    color: #999;
+}
+
+.button {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 50px;
+}
+
+.button-submit {
+    padding: 5px 20px;
+    border: none;
+    text-decoration: none;
+    border-radius: 3px;
+    font-weight: 12px;
+    background: #000000;
+    color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    .content {
+        padding: 10px;
+    }
+
+    .content__inner {
+        padding: 20px 15px;
+    }
+
+    .controls {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    th, td {
+        padding: 8px 4px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    th, td {
+        padding: 6px 2px;
+        font-size: 11px;
+    }
+
+    .nav-btn {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+}

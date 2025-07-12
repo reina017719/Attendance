@@ -1,0 +1,153 @@
+.content {
+    margin: 0;
+    padding: 40px;
+    min-height: 100vh;
+    font-family: 'Helvetica Neue', sans-serif;
+    background-color: #EEEEEE;
+    color: #222;
+}
+
+.content__inner {
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 20px;
+    font-weight: bold;
+    border-left: 4px solid #000;
+    padding-left: 12px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 8px rgba(0,0,0,0.03);
+}
+
+.row {
+    display: flex;
+    padding: 25px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.row:last-child {
+    border-bottom: none;
+}
+
+.label {
+    display: flex;
+    align-items: center;
+    width: 140px;
+    padding-left: 30px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.input-area {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 100px;
+    max-width: 450px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 6px;
+    background-color: #fff;
+}
+
+.input-area input[type="time"] {
+    width: 80px;
+    padding: 6px 10px;
+    font-size: 14px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    background-color: #fff;
+}
+
+.input-date {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    padding-left: 140px;
+    gap: 16px;
+    flex-wrap: wrap;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+.tilde {
+    margin: 16px;
+    font-weight: bold;
+}
+
+.input-area textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    resize: none;
+    min-height: 60px;
+    background-color: #fff;
+}
+
+.button-container {
+    text-align: right;
+    margin-top: 30px;
+}
+
+.button-container button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 8px 35px;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.button-container button:hover {
+    background-color: #222;
+}
+
+.year {
+    padding-left: 100px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 6px;
+    background-color: #fff;
+}
+
+.date {
+    padding-left: 220px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 6px;
+    background-color: #fff;
+}
+
+.time__input {
+    display: flex;
+    border: none;
+    width: 80px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 6px;
+    background-color: #fff;
+}
+
+.label {
+    color: #808080;
+}

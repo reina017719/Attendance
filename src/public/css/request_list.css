@@ -1,0 +1,158 @@
+.content {
+    background-color: #EEEEEE;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.content__inner {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #333;
+    border-left: 4px solid #333;
+    padding-left: 12px;
+}
+
+.items {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.items__inner {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #000000;
+}
+
+.item-label {
+    padding-left: 50px;
+    color: #666;
+}
+
+.item-label:first-child {
+    padding-right: 20px;
+}
+
+.item-label:hover {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    border-radius: 12px;
+    background-color: white;
+}
+
+th {
+    padding: 8px 12px;
+    text-align: center;
+    font-weight: bold;
+    color: #666;
+    border-bottom: 3px solid #EEEEEE;
+    font-size: 16px;
+}
+
+td {
+    padding: 10px;
+    text-align: center;
+    border-top: 1px solid #ddd;
+    font-size: 14px;
+    font-weight: bold;
+    color: #666;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+tbody tr:hover {
+    background-color: #EEEEEE;
+    cursor: pointer;
+}
+
+td:first-child {
+    font-weight: 500;
+}
+
+td a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+td a:hover {
+    text-decoration: underline;
+}
+
+tr.empty-row td {
+    background-color: #f9f9f9;
+    color: #999;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: table-row-group;
+}
+
+.item-label {
+    cursor: pointer;
+    padding: 8px 16px;
+    border: none;
+    margin-right: 8px;
+}
+
+.item-label.active {
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .content {
+        padding: 10px;
+    }
+
+    .content__inner {
+        padding: 20px 15px;
+    }
+
+    .controls {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    th, td {
+        padding: 8px 4px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    th, td {
+        padding: 6px 2px;
+        font-size: 11px;
+    }
+
+    .nav-btn {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+}
