@@ -15,7 +15,7 @@
 1. git clone リンク
 2. docker-compose up -d --build
 
-*MySQLは、OSによって起動しない場合があるのでどれぞれのPCに合わせて docker-compose.yml ファイルを編集してさい。
+*MySQLは、OSによって起動しない場合があるのでそれぞれのPCに合わせて docker-compose.yml ファイルを編集してさい。
 
 ## 環境構築
 1. docker compose exec php bash
