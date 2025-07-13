@@ -43,4 +43,4 @@
 - 開発環境 : http://localhost/
 - phpMyadmin : http://localhost:8080/
 - ログイン画面（管理者） : http://localhost/admin/login
-- ロブイン画面（一般ユーザー） : http://localhost/login
+- ログイン画面（一般ユーザー）: http://localhost/login
