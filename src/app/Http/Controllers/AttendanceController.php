@@ -18,7 +18,14 @@ class AttendanceController extends Controller
 {
     public function index()
     {
-        return view('user.attendance.index');
+        $user = Auth::user();
+        $today = now()->toDateString();
+
+        $hasAttendanceToday = Attendance::where('user_id', $user->id)
+        ->whereDate('work_date', $today)
+        ->exists();
+
+        return view('user.attendance.index', compact('hasAttendanceToday'));
     }
 
     public function clockIn()

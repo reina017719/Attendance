@@ -72,7 +72,7 @@
                     <td><strong>{{ $attendance->user->name }}</strong></td>
                     <td>{{ $startTime ? \Carbon\Carbon::parse($startTime)->format('H:i') : '-' }}</td>
                     <td>{{ $endTime ? \Carbon\Carbon::parse($endTime)->format('H:i') : '-' }}</td>
-                    <td>{{ $totalBreakMinutes > 0 ? "$breakHour:$breakMin" : '-' }}</td>
+                    <td>{{ $attendance ? "$breakHour:$breakMin" : '' }}</td>
                     <td>{{ $workMinutes !== null ? "$workHour:$workMin" : '-' }}</td>
                     <td><a href="{{ route('attendance.show', ['id' => $attendance->id]) }}">詳細</a></td>
                 </tr>

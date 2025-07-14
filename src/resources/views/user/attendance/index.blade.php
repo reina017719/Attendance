@@ -17,6 +17,9 @@
 </div>
 
 <script>
+    const hasAttendanceToday = JSON.parse(@json($hasAttendanceToday));
+</script>
+<script>
     function updateClock() {
         const now = new Date();
         const days = ['日', '月', '火', '水', '木', '金', '土'];
@@ -44,6 +47,12 @@
         const clockInBtn = document.getElementById('clockInBtn');
         const status = document.getElementById('status');
         const buttons = document.getElementById('buttons');
+
+        if (hasAttendanceToday) {
+            status.textContent = '勤務外';
+            buttons.innerHTML = `<p style="font-size: 18px; color: #333;"><strong>本日の勤怠は登録済みです。</strong></p>`;
+            return;
+        }
 
         clockInBtn.addEventListener('click', async function () {
             try {

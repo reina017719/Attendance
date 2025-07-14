@@ -66,8 +66,7 @@
                             $totalBreakMinutes += \Carbon\Carbon::parse($correction->requested_break2_start_time)
                             ->diffInMinutes(\Carbon\Carbon::parse($correction->requested_break2_end_time));
                         }
-
-                        if ($totalBreakMinutes === 0 && $attendance && $attendance->breakTimes && $attendance->breakTimes->isNotEmpty()) {
+                        elseif ($attendance && $attendance->breakTimes->isNotEmpty()) {
                             foreach ($attendance->breakTimes as $break) {
                                 if ($break->break_start && $break->break_end) {
                                     $start = \Carbon\Carbon::parse($break->break_start);
@@ -91,7 +90,7 @@
                     <td><strong>{{ $date->format('m/d') }} ({{ $weekdayJP[$date->dayOfWeek] }})</strong></td>
                     <td>{{ $startTime ? \Carbon\Carbon::parse($startTime)->format('H:i') : '' }}</td>
                     <td>{{ $endTime ? \Carbon\Carbon::parse($endTime)->format('H:i') : '' }}</td>
-                    <td>{{ $totalBreakMinutes > 0 ? "$breakHour:$breakMin" : '' }}</td>
+                    <td>{{ $attendance ? "$breakHour:$breakMin" : '' }}</td>
                     <td>{{ $workHour !== null ? "$workHour:$workMin" : '' }}</td>
                     <td>
                         @if ($attendance)
