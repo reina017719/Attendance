@@ -38,9 +38,9 @@
                 <div class="row">
                     <div class="label">出勤・退勤</div>
                     <div class="input-area">
-                    <input class="time" type="time" name="requested_start_time" value="{{ $startTime ? \Carbon\Carbon::parse($startTime)->format('H:i') : '' }}" @if ($isReadOnly) readonly @endif>
+                    <input class="time" type="time" name="requested_start_time" value="{{ old('requested_start_time',$startTime ? \Carbon\Carbon::parse($startTime)->format('H:i') : '') }}" @if ($isReadOnly) readonly @endif>
                     <span class="tilde">〜</span>
-                    <input class="time" type="time" name="requested_end_time" value="{{ $endTime ? \Carbon\Carbon::parse($endTime)->format('H:i') : '' }}" @if ($isReadOnly) readonly @endif>
+                    <input class="time" type="time" name="requested_end_time" value="{{ old('requested_end_time',$endTime ? \Carbon\Carbon::parse($endTime)->format('H:i') : '') }}" @if ($isReadOnly) readonly @endif>
                 </div>
                 @error('requested_start_time')
                     <p class="form__error" style="color:red;">{{ $message }}</p>
@@ -67,20 +67,29 @@
                     }
                     $startFormatted = $start ? \Carbon\Carbon::parse($start)->format('H:i') : '';
                     $endFormatted = $end ? \Carbon\Carbon::parse($end)->format('H:i') : '';
+
+                    $startFieldName = "requested_break" . ($i + 1) . "_start_time";
+                    $endFieldName = "requested_break" . ($i + 1) . "_end_time";
                 @endphp
                 <div class="row">
                     <div class="label">休憩{{ $i + 1}}</div>
                     <div class="input-area">
-                        <input class="time" type="time" name="requested_break{{ $i + 1 }}_start_time" value="{{ $startFormatted }}" @if ($isReadOnly) readonly @endif>
+                        <input class="time" type="time" name="{{ $startFieldName }}" value="{{ old($startFieldName,$startFormatted) }}" @if ($isReadOnly) readonly @endif>
                         <span class="tilde">〜</span>
-                        <input class="time" type="time" name="requested_break{{ $i + 1 }}_end_time" value="{{ $endFormatted }}" @if ($isReadOnly) readonly @endif>
+                        <input class="time" type="time" name="{{ $endFieldName }}" value="{{ old($endFieldName,$endFormatted) }}" @if ($isReadOnly) readonly @endif>
                     </div>
+                    @error($startFieldName)
+                        <p class="form__error" style="color:red;">{{ $message }}</p>
+                    @enderror
+                    @error($endFieldName)
+                        <p class="form__error" style="color:red;">{{ $message }}</p>
+                    @enderror
                 </div>
             @endfor
             <div class="row">
                 <div class="label">備考</div>
                 <div class="input-area">
-                    <textarea name="reason" placeholder="電車遅延のため" @if ($isReadOnly) readonly @endif>{{ $reason }}</textarea>
+                    <textarea name="reason" placeholder="電車遅延のため" @if ($isReadOnly) readonly @endif>{{ old('reason',$reason) }}</textarea>
                 </div>
                 @error('reason')
                     <p class="form__error" style="color:red;">{{ $message }}</p>
